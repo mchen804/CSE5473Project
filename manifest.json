@@ -11,8 +11,7 @@
   },
   "default_locale": "en",
   "background": {
-    "page": "src/bg/background.html",
-    "persistent": true
+    "scripts": ["src/bg/background.js"]
   },
   "options_page": "src/options_custom/index.html",
   "browser_action": {
@@ -28,16 +27,9 @@
     "cookies",
     "history",
     "idle",
-    "notifications"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://www.google.com/*"
-      ],
-      "js": [
-        "src/inject/inject.js"
-      ]
-    }
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
   ]
 }
