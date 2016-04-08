@@ -8,10 +8,12 @@ $(document).ready(function(){
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) { //Wait for results to return
                 var myArr = JSON.parse(xmlhttp.responseText);
+                var categories = myArr[host.hostname]["categories"];
                 trustworthiness = myArr[host.hostname]["0"][0];
                 child_safety = myArr[host.hostname]["4"][0];
                 $('#trustworthiness').html(trustworthiness); //Update text in DOM
                 $('#child_safety').html(child_safety);
+                $('#categories').html(listCategories(categories));
             }
         };
         xmlhttp.open("GET", "http://api.mywot.com/0.4/public_link_json2?hosts="+host.hostname+"/&key=aac42146ef84f207eda6922c397768d57043c5f5", true);
@@ -25,3 +27,15 @@ var getLocation = function(href) {
     l.href = href;
     return l;
 };
+
+var listCategories = function(list){
+    var len = list.length;
+    var categories = [];
+    $.each(list, function(index, item){
+        categories.push(item + ", ");
+        if (index == len - 1){
+            categories.push(item);
+        }
+    });
+    return categories.join("");
+}
