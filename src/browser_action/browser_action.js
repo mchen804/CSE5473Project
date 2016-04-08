@@ -15,19 +15,19 @@ $(document).ready(function(){
                 $('#child_safety').html(child_safety);
                 //Change trustworthiness badge color based on rating
                 if(trustworthiness >= 60){
-                    $('#trustworthiness').switchClass("label", "label label-success");
+                    $('#trustworthiness').addClass("label-success");
                 } else if(trustworthiness >= 40){
-                    $('#trustworthiness').switchClass("label", "label label-warning");
+                    $('#trustworthiness').addClass("label-warning");
                 } else {
-                    $('#trustworthiness').switchClass("label", "label label-danger");
+                    $('#trustworthiness').addClass("label-danger");
                 }
                 //Change child safety badge color based on rating
                 if(child_safety >= 60){
-                    $('#child_saftey').switchClass("label", "label label-success");
+                    $('#child_safety').addClass("label-success");
                 } else if(child_safety >= 40){
-                    $('#child_safety').switchClass("label", "label label-warning");
+                    $('#child_safety').addClass("label-warning");
                 } else {
-                    $('#child_safety').switchClass("label", "label label-danger");
+                    $('#child_safety').addClass("label-danger");
                 }
                 $('#categories').html(listCategories(categories));
             }
