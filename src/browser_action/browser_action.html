@@ -1,18 +1,31 @@
-<!doctype html>
-<style type="text/css">
-	#mainPopup {
-		padding: 10px;
-		height: 200px;
-		width: 400px;
-		font-family: Helvetica, Ubuntu, Arial, sans-serif;
-	}
-	h1 {
-		font-size: 2em;
-	}
-</style>
-
-<script src="browser_action.js"></script>
-<div id="mainPopup">
-<li><a href="/src/reportcard.html">Report Card</a></li>
-<p>To shut this popup down, edit the manifest file and remove the "default popup" key. To edit it, just edit ext/browser_action/browser_action.html. The CSS is there, too.</p>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="/js/jquery.js"></script>
+        <script src="browser_action.js"></script>
+    </head>
+    <style type="text/css">
+        #mainPopup {
+            padding: 10px;
+            height: 200px;
+            width: 400px;
+        }
+    </style>
+    <body>
+        <div id="mainPopup">
+            <li>
+                <a href="/src/reportcard.html">Report Card</a>
+            </li>
+        <div id="wotInfo">
+            <ul class="list-group">
+                <li class="list-group-item">Host: <span id="hostname"></span></li>
+                <li class="list-group-item"><span id="trustworthiness" class="badge"></span>Trustworthiness Rating: </li>
+                <li class="list-group-item"><span id="child_safety" class="badge"></span>Child Safety Rating: </li>
+                <li class="list-group-item">Categories: </li>
+            </ul>
+        </div>
+        </div>
+    </body>
+</html>
