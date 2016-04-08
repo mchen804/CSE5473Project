@@ -8,10 +8,15 @@ $(document).ready(function(){
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) { //Wait for results to return
                 var myArr = JSON.parse(xmlhttp.responseText);
-                var categories = myArr[host.hostname]["categories"];
-                trustworthiness = myArr[host.hostname]["0"][0];
-                child_safety = myArr[host.hostname]["4"][0];
-                $('#trustworthiness').html(trustworthiness); //Update text in DOM
+                var categories;
+                if(myArr[host.hostname]["categories"] != undefined){
+                    categories = myArr[host.hostname]["categories"];
+                }
+                if(myArr[host.hostname]["0"] != undefined && myArr[host.hostname]["4"] != undefined){
+                    trustworthiness = myArr[host.hostname]["0"][0];
+                    child_safety = myArr[host.hostname]["4"][0];
+                }
+                $('#trustworthiness').html(child_safety);
                 $('#child_safety').html(child_safety);
                 //Change trustworthiness badge color based on rating
                 if(trustworthiness >= 60){
@@ -35,16 +40,16 @@ $(document).ready(function(){
         xmlhttp.open("GET", "http://api.mywot.com/0.4/public_link_json2?hosts="+host.hostname+"/&key=aac42146ef84f207eda6922c397768d57043c5f5", true);
         xmlhttp.send();
         $('#hostname').html(host.hostname);
-//        if(location.protocol == 'http:'){
-//	       $('#connection').html("HTTP");
-//           $('#connection').addClass("label-warning");
-//        } else if(location.protocol == 'https:'){
-//	       $('#connection').html("HTTPS");
-//           $('#connection').addClass("label-success");
-//        } else {
-//            $('#connection').html("Unknown");
-//            $('#connection').addClass("label-default");
-//        }
+        if(host.protocol == 'http:'){
+	        $('#connection').html("HTTP");
+            $('#connection').addClass("label-danger");
+        } else if(host.protocol == 'https:'){
+	        $('#connection').html("HTTPS");
+            $('#connection').addClass("label-success");
+        } else {
+            $('#connection').html("Unknown");
+            $('#connection').addClass("label-default");
+        }
     });
 });
 

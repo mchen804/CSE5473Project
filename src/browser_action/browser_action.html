@@ -3,11 +3,11 @@
     <head>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <script src="/js/jquery.js"></script>
-        <script src="/src/categories/categories.js"></script>
-        <script src="browser_action.js"></script>
-    </head>
-    <style type="text/css">
+            <script src="/js/jquery.js"></script>
+            <script src="/src/categories/categories.js"></script>
+            <script src="browser_action.js"></script>
+        </head>
+        <style type="text/css">
         #mainPopup {
             padding: 10px;
             height: 200px;
@@ -22,26 +22,41 @@
             overflow: hidden;
         }
     </style>
-    <body>
-        <div id="mainPopup">
-            <li>
-                <a href="/src/reportcard.html">Report Card</a>
-            </li>
-            <hr/>
-        <div id="connection">
-            <ul class="list-group">
-                <li class="list-group-item"><span id="connection" class="label"></span><strong>Connection Protocol: </strong></li>
-            </ul>
-        </div>
-            <hr/>
-        <div id="wotInfo">
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Host: </strong><span id="hostname" style="float: right;"></span></li>
-                <li class="list-group-item"><span id="trustworthiness" class="label"></span><strong>Trustworthiness Rating: </strong></li>
-                <li class="list-group-item"><span id="child_safety" class="label"></span><strong>Child Safety Rating: </strong></li>
-                <li class="list-group-item"><strong>Categories: </strong><span id="categories" style="float: right;"></span></li>
-            </ul>
-        </div>
-        </div>
-    </body>
-</html>
+        <body>
+            <div id="mainPopup">
+                <li>
+                    <a href="/src/reportcard.html">Report Card</a>
+                </li>
+                <hr/>
+                <div id="connection_type">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span id="connection" class="label"></span>
+                            <strong>Connection Protocol: </strong>
+                        </li>
+                    </ul>
+                </div>
+                <hr/>
+                <div id="wotInfo">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Host: </strong>
+                            <span id="hostname" style="float: right;"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <span id="trustworthiness" class="label"></span>
+                            <strong>Trustworthiness Rating: </strong>
+                        </li>
+                        <li class="list-group-item">
+                            <span id="child_safety" class="label"></span>
+                            <strong>Child Safety Rating: </strong>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Categories: </strong>
+                            <span id="categories" style="float: right;"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </body>
+    </html>
