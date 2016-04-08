@@ -29,12 +29,22 @@ $(document).ready(function(){
                 } else {
                     $('#child_safety').addClass("label-danger");
                 }
-                $('#categories').html(listCategories(categories));
+                $('#categories').html(listCategories(categories)); // Populate Categories
             }
         };
         xmlhttp.open("GET", "http://api.mywot.com/0.4/public_link_json2?hosts="+host.hostname+"/&key=aac42146ef84f207eda6922c397768d57043c5f5", true);
         xmlhttp.send();
         $('#hostname').html(host.hostname);
+//        if(location.protocol == 'http:'){
+//	       $('#connection').html("HTTP");
+//           $('#connection').addClass("label-warning");
+//        } else if(location.protocol == 'https:'){
+//	       $('#connection').html("HTTPS");
+//           $('#connection').addClass("label-success");
+//        } else {
+//            $('#connection').html("Unknown");
+//            $('#connection').addClass("label-default");
+//        }
     });
 });
 
