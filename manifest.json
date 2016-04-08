@@ -19,6 +19,12 @@
     "default_title": "browser action demo",
     "default_popup": "src/browser_action/browser_action.html"
   },
+  "content_scripts":[
+  {
+    "matches":["http://*/*", "https://*/*"],
+    "js":["js/httpsDetection.js"],
+    "run_at": "document_end"
+    }],
   "permissions": [
     "bookmarks",
     "chrome://favicon/",
