@@ -13,6 +13,22 @@ $(document).ready(function(){
                 child_safety = myArr[host.hostname]["4"][0];
                 $('#trustworthiness').html(trustworthiness); //Update text in DOM
                 $('#child_safety').html(child_safety);
+                //Change trustworthiness badge color based on rating
+                if(trustworthiness >= 60){
+                    $('#trustworthiness').switchClass("label", "label label-success");
+                } else if(trustworthiness >= 40){
+                    $('#trustworthiness').switchClass("label", "label label-warning");
+                } else {
+                    $('#trustworthiness').switchClass("label", "label label-danger");
+                }
+                //Change child safety badge color based on rating
+                if(child_safety >= 60){
+                    $('#child_saftey').switchClass("label", "label label-success");
+                } else if(child_safety >= 40){
+                    $('#child_safety').switchClass("label", "label label-warning");
+                } else {
+                    $('#child_safety').switchClass("label", "label label-danger");
+                }
                 $('#categories').html(listCategories(categories));
             }
         };

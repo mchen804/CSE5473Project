@@ -12,6 +12,11 @@
             height: 200px;
             width: 400px;
         }
+        .label {
+            border-radius: 1em;
+            float: right;
+            font-size: 14px;
+        }
     </style>
     <body>
         <div id="mainPopup">
@@ -22,8 +27,8 @@
         <div id="wotInfo">
             <ul class="list-group">
                 <li class="list-group-item"><strong>Host: </strong><span id="hostname" style="float: right;"></span></li>
-                <li class="list-group-item"><span id="trustworthiness" class="badge"></span><strong>Trustworthiness Rating: </strong></li>
-                <li class="list-group-item"><span id="child_safety" class="badge"></span><strong>Child Safety Rating: </strong></li>
+                <li class="list-group-item"><span id="trustworthiness" class="label"></span><strong>Trustworthiness Rating: </strong></li>
+                <li class="list-group-item"><span id="child_safety" class="label"></span><strong>Child Safety Rating: </strong></li>
                 <li class="list-group-item"><strong>Categories: </strong><span id="categories" style="float: right;"></span></li>
             </ul>
         </div>
