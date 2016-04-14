@@ -1,0 +1,105 @@
+html, body {
+  max-width: 150px !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+p {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  text-align: center;
+  max-width: 150px !important;
+}
+
+a, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+a, a:visited, a:active {
+  color: inherit;
+}
+
+a:hover {
+  color: #222222;
+}
+
+#top-toolbar {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  width: 150px !important;
+  text-align: center;
+}
+
+#top-toolbar h5 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+  outline: none;
+  cursor: pointer;
+}
+
+#top-toolbar md-toolbar {
+  min-height: 0 !important;
+}
+
+#top-toolbar h5 {
+  margin: 0 !important;
+}
+
+#final-card, #trust-card, #child-card {
+  position: relative;
+  padding: 15px 0;
+}
+
+#final-grade, #trust-grade, #child-grade {
+  position: absolute;
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 40px;
+  top: 38px;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+#power-button {
+  font-size: 100px;
+  margin: 0 auto;
+  padding-top: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+#cookieStats h1 {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+#cookieStats h1#percentage {
+  font-size: 23px;
+  margin: 10px 0 0 0 !important;
+}
+
+#currentTab {
+  padding: 0 20px 20px 20px;
+}
+
+#currentTab div {
+  max-width: 130px !important;
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cookie, .cookie i {
+  outline: none;
+  cursor: pointer;
+}
+
+.md-subheader-inner {
+  padding: 10px !important;
+  text-align: center;
+}

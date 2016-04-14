@@ -1,0 +1,100 @@
+#top-toolbar h1 {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  text-align: center;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+  outline: none;
+  cursor: pointer;
+  margin: 0 !important;
+}
+
+#top-toolbar md-toolbar {
+  min-height: 0 !important;
+}
+
+md-input-container {
+  width: 100% !important;
+}
+
+#whitelist-header {
+  text-align: center;
+  margin: 10px auto;
+}
+
+#power-button {
+  outline: none;
+  cursor: pointer;
+}
+
+#whitelist-actions {
+  position: relative;
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+
+#whitelist-import-form,
+#whitelist-export-form {
+  position: relative;
+  margin: 0 auto;
+  margin-top: -30px !important;
+}
+
+.whitelist-import,
+.whitelist-export {
+  text-align: center;
+  width: 100%;
+  margin: 0 !important;
+}
+
+.whitelist-import input,
+.whitelist-export input {
+  outline: none;
+  cursor: pointer;
+}
+
+#submit {
+  position: absolute;
+  top: 55%;
+  right: 10px;
+}
+
+#import-button {
+  display: absolute;
+}
+
+#whitelist-list {
+  position: relative
+  margin: 0 auto;
+}
+
+#whitelist-container {
+  width: 75%;
+  margin: auto;
+}
+
+#whitelist-container div {
+  position: relative;
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 20px;
+  color: #3F51B5;
+  padding: 10px 10px;
+  border: 1px #ddd;
+  border-style: solid none;
+}
+
+#whitelist-container .whitelist-site {
+  position: relative;
+}
+
+#whitelist-container div i {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  outline: none;
+  cursor: pointer;
+}
