@@ -33,6 +33,23 @@ chrome.webRequest.onBeforeRequest.addListener(
     // extraInfoSpec
     ["blocking"]);
 
+
+function showHTTPS(){
+    if(host.protocol == 'http:'){
+            chrome.browserAction.setBadgeText({text : "HTTP"});
+            chrome.browserAction.setBadgeBackgroundColor({ color: "#FF0000"});
+        } else if(host.protocol == 'https:'){
+            chrome.browserAction.setBadgeText({text: "HTTPS"});
+            chrome.browserAction.setBadgeBackgroundColor({ color: "#00ff00"});
+        } else {
+            chrome.browserAction.setBadgeText({text: "none"});
+        }
+};
+
+chrome.tabs.onUpdated.addListener(function(tabId, props) {
+  showHTTPS();
+});
+
 var getLocation = function(href) {
     var l = document.createElement("a");
     l.href = href;
