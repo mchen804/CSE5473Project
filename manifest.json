@@ -24,8 +24,8 @@
   "content_scripts":[
   {
     "matches":["http://*/*", "https://*/*"],
-    "js":["js/httpsDetection.js"],
-    "run_at": "document_end"
+    "js":["src/js/redirect.js"],
+    "run_at": "document_start"
     }],
   "permissions": [
     "bookmarks",
@@ -39,6 +39,7 @@
     "webRequest",
     "webRequestBlocking",
     "activeTab",
+    "tabs",
     "<all_urls>"
   ]
 }

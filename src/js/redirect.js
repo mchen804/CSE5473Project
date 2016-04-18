@@ -1,41 +1,3 @@
-function showHTTPS(){
- chrome.tabs.query({ 'active': true, 'lastFocusedWindow': true, 'currentWindow': true }, function(tabs){ //Get active tab
-        var currentTab = tabs[0];
-        var selectedId = tabs[0].id;
-        console.log(selectedId);
-        console.log(currentTab.url);
-        var host = getLocation(currentTab.url);
-        console.log(host.protocol);
-        if(host.protocol == 'http:'){
-            console.log("http");
-            chrome.browserAction.setBadgeText({text : "HTTP", tabId: selectedId});
-            chrome.browserAction.setBadgeBackgroundColor({ color: "#FF0000", tabId: selectedId});
-        } else if(host.protocol == 'https:'){
-            console.log("https");
-            chrome.browserAction.setBadgeText({text: "safe", tabId: selectedId});
-            chrome.browserAction.setBadgeBackgroundColor({ color: "#00ff00", tabId: selectedId});
-        } else {
-            console.log("else");
-            chrome.browserAction.setBadgeText({text: "none", tabId: selectedId});
-        }
-    });
-};
-chrome.tabs.onActivated.addListener(function(info){
-    showHTTPS();
-});
-
-chrome.tabs.onUpdated.addListener(function(tabId , info) {
-    if (info.status == "complete") {
-        showHTTPS();
-    }
-});
-
-var getLocation = function(href) {
-    var l = document.createElement("a");
-    l.href = href;
-    return l;
-};
-
 chrome.webRequest.onBeforeRequest.addListener(
     function(info) {
         console.log("Attempted Request: " + info.url);
@@ -70,3 +32,9 @@ chrome.webRequest.onBeforeRequest.addListener(
     },
     // extraInfoSpec
     ["blocking"]);
+
+var getLocation = function(href) {
+    var l = document.createElement("a");
+    l.href = href;
+    return l;
+};
